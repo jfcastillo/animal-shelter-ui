@@ -1,5 +1,5 @@
-I, [2021-06-02T22:25:27.618788 #11904]  INFO -- : Registered expected interaction DELETE /animals/Lisa
-D, [2021-06-02T22:25:27.618788 #11904] DEBUG -- : {
+I, [2021-06-02T23:21:34.836261 #19172]  INFO -- : Registered expected interaction DELETE /animals/Lisa
+D, [2021-06-02T23:21:34.836261 #19172] DEBUG -- : {
   "description": "a request to remove an animal",
   "providerState": "remove animal",
   "request": {
@@ -13,9 +13,9 @@ D, [2021-06-02T22:25:27.618788 #11904] DEBUG -- : {
   },
   "metadata": null
 }
-I, [2021-06-02T22:25:27.647789 #11904]  INFO -- : Received OPTIONS request for mock service administration endpoint DELETE /animals/Lisa. Returning CORS headers: {"Access-Control-Allow-Origin"=>"http://localhost", "Access-Control-Allow-Headers"=>"*", "Access-Control-Allow-Methods"=>"DELETE, POST, GET, HEAD, PUT, TRACE, CONNECT, PATCH"}.
-I, [2021-06-02T22:25:27.663791 #11904]  INFO -- : Received request DELETE /animals/Lisa
-D, [2021-06-02T22:25:27.663791 #11904] DEBUG -- : {
+I, [2021-06-02T23:21:34.850261 #19172]  INFO -- : Received OPTIONS request for mock service administration endpoint DELETE /animals/Lisa. Returning CORS headers: {"Access-Control-Allow-Origin"=>"http://localhost", "Access-Control-Allow-Headers"=>"*", "Access-Control-Allow-Methods"=>"DELETE, POST, GET, HEAD, PUT, TRACE, CONNECT, PATCH"}.
+I, [2021-06-02T23:21:34.865262 #19172]  INFO -- : Received request DELETE /animals/Lisa
+D, [2021-06-02T23:21:34.865262 #19172] DEBUG -- : {
   "path": "/animals/Lisa",
   "query": "",
   "method": "delete",
@@ -31,12 +31,12 @@ D, [2021-06-02T22:25:27.663791 #11904] DEBUG -- : {
     "Version": "HTTP/1.1"
   }
 }
-I, [2021-06-02T22:25:27.663791 #11904]  INFO -- : Found matching response for DELETE /animals/Lisa
-D, [2021-06-02T22:25:27.663791 #11904] DEBUG -- : {
+I, [2021-06-02T23:21:34.866262 #19172]  INFO -- : Found matching response for DELETE /animals/Lisa
+D, [2021-06-02T23:21:34.866262 #19172] DEBUG -- : {
   "status": 204,
   "headers": {
   }
 }
-I, [2021-06-02T22:25:27.679792 #11904]  INFO -- : Verifying - interactions matched
-I, [2021-06-02T22:25:27.695793 #11904]  INFO -- : Cleared interactions
-I, [2021-06-02T22:25:27.712795 #11904]  INFO -- : Merging interactions into pact for AnimalShelterBack at C:/Users/FELIPE PC/Desktop/animal-shelter-ui/test/contract/pacts/animalshelterfront-animalshelterback.json
+I, [2021-06-02T23:21:34.881266 #19172]  INFO -- : Verifying - interactions matched
+I, [2021-06-02T23:21:34.896265 #19172]  INFO -- : Cleared interactions
+I, [2021-06-02T23:21:34.911266 #19172]  INFO -- : Merging interactions into pact for AnimalShelterBack at C:/Users/FELIPE PC/Desktop/animal-shelter-ui/test/contract/pacts/animalshelterfront-animalshelterback.json
