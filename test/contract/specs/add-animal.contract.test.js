@@ -25,7 +25,7 @@ describe('Given an Animal Service', () => {
                 },
                 willRespondWith: {
                     status: 201,
-                    body: Matchers.eachLike({
+                    body: Matchers.like({
                         name: Matchers.string("Lisa"),
                         breed: Matchers.like("Criolla"),
                         gender: Matchers.like("Female"),
