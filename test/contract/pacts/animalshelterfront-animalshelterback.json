@@ -19,13 +19,10 @@
         },
         "body": [
           {
+            "name": "Manchas",
             "breed": "Bengali",
             "gender": "Female",
-            "isVaccinated": true,
-            "name": "Manchas",
-            "vaccines": [
-              "rabia"
-            ]
+            "vaccinated": true
           }
         ],
         "matchingRules": {
@@ -35,23 +32,76 @@
           "$.body[*].*": {
             "match": "type"
           },
+          "$.body[*].name": {
+            "match": "type"
+          },
           "$.body[*].breed": {
             "match": "type"
           },
           "$.body[*].gender": {
-            "match": "regex",
-            "regex": "Female|Male"
+            "match": "type"
           },
-          "$.body[*].isVaccinated": {
+          "$.body[*].vaccinated": {
+            "match": "type"
+          }
+        }
+      }
+    },
+    {
+      "description": "a request to remove an animal",
+      "providerState": "remove animal",
+      "request": {
+        "method": "DELETE",
+        "path": "/animals/Lisa"
+      },
+      "response": {
+        "status": 204,
+        "headers": {
+        }
+      }
+    },
+    {
+      "description": "a request to add a new animal",
+      "providerState": "create animal",
+      "request": {
+        "method": "POST",
+        "path": "/animals",
+        "body": {
+          "name": "Lisa",
+          "breed": "Criolla",
+          "gender": "Female",
+          "vaccinated": true
+        }
+      },
+      "response": {
+        "status": 201,
+        "headers": {
+        },
+        "body": [
+          {
+            "name": "Lisa",
+            "breed": "Criolla",
+            "gender": "Female",
+            "vaccinated": true
+          }
+        ],
+        "matchingRules": {
+          "$.body": {
+            "min": 1
+          },
+          "$.body[*].*": {
             "match": "type"
           },
           "$.body[*].name": {
             "match": "type"
           },
-          "$.body[*].vaccines": {
-            "min": 1
+          "$.body[*].breed": {
+            "match": "type"
           },
-          "$.body[*].vaccines[*].*": {
+          "$.body[*].gender": {
+            "match": "type"
+          },
+          "$.body[*].vaccinated": {
             "match": "type"
           }
         }

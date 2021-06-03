@@ -2,27 +2,32 @@ import { provider } from './init-pact';
 import { AnimalController } from "../../../controllers";
 import { Matchers } from "@pact-foundation/pact";
 
-
+const animal = {
+    name: "Lisa",
+    breed: "Criolla",
+    gender: "Female",
+    vaccinated: true
+}
 describe('Given an Animal Service', () => {
     // beforeAll(async () => {
     //     await provider.setup();
     // });
-    describe('When a request to list all the animals is made', () => {
+    describe('When a request to add a new animal is made', () => {
         beforeAll(async () => {
-
             await provider.setup();
             await provider.addInteraction({
-                state: 'there are animals',
-                uponReceiving: 'a request to get all animals',
+                state: 'create animal',
+                uponReceiving: 'a request to add a new animal',
                 withRequest: {
-                    method: 'GET',
-                    path: '/animals'
+                    method: 'POST',
+                    path: '/animals',
+                    body: animal,
                 },
                 willRespondWith: {
-                    status: 200,
+                    status: 201,
                     body: Matchers.eachLike({
-                        name: Matchers.string("Manchas"),
-                        breed: Matchers.like("Bengali"),
+                        name: Matchers.string("Lisa"),
+                        breed: Matchers.like("Criolla"),
                         gender: Matchers.like("Female"),
                         vaccinated: Matchers.boolean(true),
                     })
@@ -30,7 +35,7 @@ describe('Given an Animal Service', () => {
             });
         });
         it("Then it should return the right data", async () => {
-            const response = await AnimalController.list();
+            const response = await AnimalController.register(animal);
             expect(response.data).toMatchSnapshot();
             await provider.verify();
         });

@@ -1,57 +1,24 @@
-I, [2021-04-21T20:26:05.415118 #5760]  INFO -- : Registered expected interaction GET /animals
-D, [2021-04-21T20:26:05.416113 #5760] DEBUG -- : {
-  "description": "a request to get all animals",
-  "providerState": "there are animals",
+I, [2021-06-02T22:25:27.618788 #11904]  INFO -- : Registered expected interaction DELETE /animals/Lisa
+D, [2021-06-02T22:25:27.618788 #11904] DEBUG -- : {
+  "description": "a request to remove an animal",
+  "providerState": "remove animal",
   "request": {
-    "method": "GET",
-    "path": "/animals"
+    "method": "DELETE",
+    "path": "/animals/Lisa"
   },
   "response": {
-    "status": 200,
+    "status": 204,
     "headers": {
-    },
-    "body": {
-      "json_class": "Pact::ArrayLike",
-      "contents": {
-        "breed": {
-          "json_class": "Pact::SomethingLike",
-          "contents": "Bengali"
-        },
-        "gender": {
-          "json_class": "Pact::Term",
-          "data": {
-            "generate": "Female",
-            "matcher": {
-              "json_class": "Regexp",
-              "o": 0,
-              "s": "Female|Male"
-            }
-          }
-        },
-        "isVaccinated": {
-          "json_class": "Pact::SomethingLike",
-          "contents": true
-        },
-        "name": {
-          "json_class": "Pact::SomethingLike",
-          "contents": "Manchas"
-        },
-        "vaccines": {
-          "json_class": "Pact::ArrayLike",
-          "contents": "rabia",
-          "min": 1
-        }
-      },
-      "min": 1
     }
   },
   "metadata": null
 }
-I, [2021-04-21T20:26:05.448125 #5760]  INFO -- : Received request GET /animals
-D, [2021-04-21T20:26:05.448125 #5760] DEBUG -- : {
-  "path": "/animals",
+I, [2021-06-02T22:25:27.647789 #11904]  INFO -- : Received OPTIONS request for mock service administration endpoint DELETE /animals/Lisa. Returning CORS headers: {"Access-Control-Allow-Origin"=>"http://localhost", "Access-Control-Allow-Headers"=>"*", "Access-Control-Allow-Methods"=>"DELETE, POST, GET, HEAD, PUT, TRACE, CONNECT, PATCH"}.
+I, [2021-06-02T22:25:27.663791 #11904]  INFO -- : Received request DELETE /animals/Lisa
+D, [2021-06-02T22:25:27.663791 #11904] DEBUG -- : {
+  "path": "/animals/Lisa",
   "query": "",
-  "method": "get",
+  "method": "delete",
   "headers": {
     "Accept": "application/json, text/plain, */*",
     "Referer": "http://localhost/",
@@ -64,46 +31,12 @@ D, [2021-04-21T20:26:05.448125 #5760] DEBUG -- : {
     "Version": "HTTP/1.1"
   }
 }
-I, [2021-04-21T20:26:05.449120 #5760]  INFO -- : Found matching response for GET /animals
-D, [2021-04-21T20:26:05.449120 #5760] DEBUG -- : {
-  "status": 200,
+I, [2021-06-02T22:25:27.663791 #11904]  INFO -- : Found matching response for DELETE /animals/Lisa
+D, [2021-06-02T22:25:27.663791 #11904] DEBUG -- : {
+  "status": 204,
   "headers": {
-  },
-  "body": {
-    "json_class": "Pact::ArrayLike",
-    "contents": {
-      "breed": {
-        "json_class": "Pact::SomethingLike",
-        "contents": "Bengali"
-      },
-      "gender": {
-        "json_class": "Pact::Term",
-        "data": {
-          "generate": "Female",
-          "matcher": {
-            "json_class": "Regexp",
-            "o": 0,
-            "s": "Female|Male"
-          }
-        }
-      },
-      "isVaccinated": {
-        "json_class": "Pact::SomethingLike",
-        "contents": true
-      },
-      "name": {
-        "json_class": "Pact::SomethingLike",
-        "contents": "Manchas"
-      },
-      "vaccines": {
-        "json_class": "Pact::ArrayLike",
-        "contents": "rabia",
-        "min": 1
-      }
-    },
-    "min": 1
   }
 }
-I, [2021-04-21T20:26:05.479119 #5760]  INFO -- : Verifying - interactions matched
-I, [2021-04-21T20:26:05.495122 #5760]  INFO -- : Cleared interactions
-I, [2021-04-21T20:26:05.512129 #5760]  INFO -- : Writing pact for AnimalShelterBack to C:/Users/FELIPE PC/git/animal-shelter-ui/test/contract/pacts/animalshelterfront-animalshelterback.json
+I, [2021-06-02T22:25:27.679792 #11904]  INFO -- : Verifying - interactions matched
+I, [2021-06-02T22:25:27.695793 #11904]  INFO -- : Cleared interactions
+I, [2021-06-02T22:25:27.712795 #11904]  INFO -- : Merging interactions into pact for AnimalShelterBack at C:/Users/FELIPE PC/Desktop/animal-shelter-ui/test/contract/pacts/animalshelterfront-animalshelterback.json
