@@ -25,12 +25,7 @@ describe('Given an Animal Service', () => {
                 },
                 willRespondWith: {
                     status: 201,
-                    body: Matchers.like({
-                        name: Matchers.string("Lisa"),
-                        breed: Matchers.like("Criolla"),
-                        gender: Matchers.like("Female"),
-                        vaccinated: Matchers.boolean(true),
-                    })
+                    body: Matchers.like(animal)
                 }
             });
         });
